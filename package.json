@@ -1,6 +1,19 @@
 {
   "name": "loader",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT"
+  "description": "DAL loader - jolt home task",
+  "author": "Linoy Zaga",
+  "main": "src/server.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linoyzaga/loader.git"
+  },
+  "scripts": {
+    "debug": "node --inspect src/server.js",
+    "start": "node src/server.js"
+  }
 }
