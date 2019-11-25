@@ -1,3 +1,5 @@
+const uniq = require('lodash/uniq');
+
 function getOne(ids, getMany) {
     return getMany(ids);
 };
@@ -11,7 +13,7 @@ const createLoader = (getMany, options = {batchInterval: 0}) => {
 
     setInterval(async() => {
         if (ids.length !== 0) {
-            result = await getOne(ids, getMany);
+            result = await getOne(uniq(ids), getMany);
             ids = [];
             resolves.map(res => res(result));
         }

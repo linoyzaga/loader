@@ -37,3 +37,15 @@ const getOneUser3 = createLoader(getManyUsers, { batchInterval: 100 });
 
     const rest = await Promise.all([ getOneUser3(2), getOneUser3(3), getOneUser3(4)]);
 })();
+
+// Third Task
+const getOneUser4 = createLoader(getManyUsers, { batchInterval: 100 });
+
+(async function() {
+    const rest = await Promise.all([
+        getOneUser4(1),
+        getOneUser4(2),
+        getOneUser4(1),
+        getOneUser4(2),
+    ]);
+})();
